@@ -1,29 +1,13 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This repository is a display of my work on a project as an assignment from Chad Darby of http://www.luv2code.com for a course I am taking and enjoying. The assignment is building an ecommerce application utilizing Angular for the  frontend and SpringBoot for the back and utilizes MySql WorkBench and sql scripts provided by Chad for creating the database. It is primarily written in TypeScipt with VSCodium.
 
-### What is this repository for? ###
+This repository will be updated ittermittently with notes and progress updates.
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+All starter files and code provided by Chad Darby.
 
-### How do I get set up? ###
+Future implementation: I intend to use what is learned here as a means to create an Angular application for managing reservations at a fuel dock for vessels of various size.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+#Thank You for Checking out what I am working on! #
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+ 
