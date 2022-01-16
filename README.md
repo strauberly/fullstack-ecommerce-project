@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README #
 
 This repository is a display of my work on a project as an assignment from Chad Darby of http://www.luv2code.com for a course I am taking and enjoying. The assignment is building an e-commerce application utilizing Angular for the  frontend and SpringBoot for the back and utilizes resources provided by Chad (css, html, graphics, starter code, sql scripts). Thank you Chad!
@@ -46,3 +47,7 @@ category menu now loads dynamically based on contents of db
 Front and Backend are connected and some modifications for style. Currently working on queries by category id.
 
  
+=======
+# FullstackCourseProject
+Created as a course exercise in creating a full stack application with Chad Darby 
+>>>>>>> 4f82da31b3ac4ef5eff9edd08f84b6770e94f729
