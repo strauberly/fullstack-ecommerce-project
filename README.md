@@ -1,7 +1,7 @@
 
 # README #
 
-This repository is a display of my work on a project as an assignment from Chad Darby of http://www.luv2code.com for a course I am taking and enjoying. The assignment is building an e-commerce application utilizing Angular for the  frontend and SpringBoot for the back and utilizes resources provided by Chad (css, html, graphics, starter code, sql scripts). Thank you Chad!
+This repository is a display of my work on a project as an assignment from Chad Darby of http://www.luv2code.com. The assignment is building an e-commerce application utilizing Angular for the  frontend and SpringBoot for the back and utilizes resources provided by Chad (css, html, graphics, starter code, sql scripts). Thank you Chad!
 
 This repository will be updated ittermittently with notes and progress updates.
 
