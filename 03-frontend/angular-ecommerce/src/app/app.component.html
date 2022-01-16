@@ -2,7 +2,7 @@
   <!-- MENU SIDEBAR-->
   <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
-      <a href="#">
+      <a routerLink="/products">
         <img
           src="assets/images/logo.png"
           alt="luv2shop"
@@ -10,24 +10,8 @@
         />
       </a>
     </div>
-    <div class="menu-sidebar-content js-scrollbar1">
-      <nav class="navbar-sidebar">
-        <ul class="list-unstyled navbar-list">
-          <li>
-            <a href="#">Books</a>
-          </li>
-          <li>
-            <a href="#">Coffee Mugs</a>
-          </li>
-          <li>
-            <a href="#">Mouse Pads</a>
-          </li>
-          <li>
-            <a href="#">Luggage Tags</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+
+    <app-product-category-menu></app-product-category-menu>
   </aside>
   <!-- END MENU SIDEBAR-->
 
@@ -37,21 +21,8 @@
       <div class="section-content section-content-p30">
         <div class="container-fluid">
           <div class="header-wrap">
-            <form class="form-header" onsubmit="return false;" method="GET">
-              <input
-                class="au-input au-input-xl"
-                type="text"
-                name="search"
-                placeholder="Search for data ..."
-              />
-              <button class="au-btn-submit" type="submit">Search</button>
-            </form>
-            <div class="cart-area d-n">
-              <a href="shopping-detail.html">
-                <div class="total">19.22 <span> 2</span></div>
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-              </a>
-            </div>
+            <app-search></app-search>
+            <app-cart-status></app-cart-status>
           </div>
           <div class="account-wrap"></div>
         </div>
@@ -60,7 +31,7 @@
     <!-- END HEADER DESKTOP-->
 
     <!-- MAIN CONTENT-->
-    <app-product-list></app-product-list>
+    <router-outlet></router-outlet>
   </div>
 </div>
 
