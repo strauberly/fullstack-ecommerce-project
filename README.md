@@ -10,6 +10,22 @@ All starter files and code provided by Chad Darby.
 Future implementation: I intend to use what is learned here as a means to create my own Angular application to add to my project portfolio for consideration by employers.
 
 #Thank You for Checking out what I am working on!
+-19 Jan 2022-
+Validation of form field input implemented and functioning.
+
+Cart price total and quantity total at checkout now functioning as intended.
+
+Implented api receiving an order and writing to database and generating a tracking number that is also written to database.
+--------------------------
+
+-17 Jan 2022-
+Country and State drop downs implemented. States dependent on country.
+Began field input validation.
+--------------------------
+
+-16 Jan 2022-
+Dependent fields implemented (expiration month and years).
+--------------------------
 
 -15 Jan 2022-
 Began laying out checkout form components and building html.
@@ -46,7 +62,4 @@ category menu now loads dynamically based on contents of db
 
 Front and Backend are connected and some modifications for style. Currently working on queries by category id.
 
- 
-=======
-# FullstackCourseProject
-Created as a course exercise in creating a full stack application with Chad Darby 
+
