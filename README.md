@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # README #
 
 This repository is a display of my work on a project as an assignment from Chad Darby of http://www.luv2code.com for a course I am taking and enjoying. The assignment is building an e-commerce application utilizing Angular for the  frontend and SpringBoot for the back and utilizes resources provided by Chad (css, html, graphics, starter code, sql scripts). Thank you Chad!
@@ -10,6 +9,22 @@ All starter files and code provided by Chad Darby.
 Future implementation: I intend to use what is learned here as a means to create my own Angular application to add to my project portfolio for consideration by employers.
 
 #Thank You for Checking out what I am working on!
+-19 Jan 2022-
+Validation of form field input implemented and functioning.
+
+Cart price total and quantity total at checkout now functioning as intended.
+
+Implented api receiving an order and writing to database and generating a tracking number that is also written to database.
+--------------------------
+
+-17 Jan 2022-
+Country and State drop downs implemented. States dependent on country.
+Began field input validation.
+--------------------------
+
+-16 Jan 2022-
+Dependent fields implemented (expiration month and years).
+--------------------------
 
 -15 Jan 2022-
 Began laying out checkout form components and building html.
@@ -46,8 +61,3 @@ category menu now loads dynamically based on contents of db
 
 Front and Backend are connected and some modifications for style. Currently working on queries by category id.
 
- 
-=======
-# FullstackCourseProject
-Created as a course exercise in creating a full stack application with Chad Darby 
->>>>>>> 4f82da31b3ac4ef5eff9edd08f84b6770e94f729
