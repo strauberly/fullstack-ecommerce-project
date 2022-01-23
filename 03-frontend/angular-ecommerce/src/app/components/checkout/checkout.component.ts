@@ -117,8 +117,8 @@ export class CheckoutComponent implements OnInit {
           Validators.pattern('[0-9]{3}'),
           Luv2ShopValidators.notOnlyWhiteSpace,
         ]),
-        expirationMonth: new FormControl('', [Validators.required]),
-        expirationYear: new FormControl('', [Validators.required]),
+        expirationMonth: new FormControl(['']),
+        expirationYear: new FormControl(['']),
       }),
     });
     // pop cc months
@@ -214,6 +214,7 @@ export class CheckoutComponent implements OnInit {
   onSubmit() {
     console.log('Handling the submit button');
     if (this.checkoutFormGroup.invalid) {
+      alert('checkout form invalid');
       this.checkoutFormGroup.markAllAsTouched();
       return;
     }

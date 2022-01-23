@@ -67,7 +67,7 @@
               <div class="input-space">
                 <input formControlName="email" type="text" />
                 <div
-                  *ngIf="firstName.invalid && (email.dirty || email.touched)"
+                  *ngIf="email.invalid && (email.dirty || email.touched)"
                   class="alert alert-danger mt-1"
                 >
                   <div *ngIf="email.errors['required']">E-mail is required</div>
