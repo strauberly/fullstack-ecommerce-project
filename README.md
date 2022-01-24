@@ -10,8 +10,11 @@ All starter files and code provided by Chad Darby.
 Future implementation: I intend to use what is learned here as a means to create my own Angular application to add to my project portfolio for consideration by employers.
 
 #Thank You for Checking out what I am working on!
+-23 Jan 2022-
+Alert box is now populating with order number and login button generates Okta sign in.
+--------------------------
 -20 Jan 2022-
-Was not receiving fully desired output after implenting front end of sending order information. Investigating backend revealed multiple changes nedded for correct population of DB. That appears to have been corrected but still researching why the alert box with order confirmation is not generating.
+Was not receiving fully desired output after implenting front end of sending order information. Investigating backend revealed multiple changes nedded for correct population of DB. That appears to have been corrected but still researching why the alert box with order confirmation is not generating. update** html typo**
 --------------------------
 -19 Jan 2022-
 Validation of form field input implemented and functioning.

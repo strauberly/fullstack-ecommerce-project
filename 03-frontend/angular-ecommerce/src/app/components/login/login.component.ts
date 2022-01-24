@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   ) {
     this.oktaSignin = new OktaSignIn({
       logo: 'assets/images/logo.png',
-      baseurl: myAppConfig.oidc.issuer.split('/oauth2')[0],
+      baseUrl: myAppConfig.oidc.issuer.split('/oauth2')[0],
       clientId: myAppConfig.oidc.clientId,
       redirectUri: myAppConfig.oidc.redirectUri,
       authPararms: {
