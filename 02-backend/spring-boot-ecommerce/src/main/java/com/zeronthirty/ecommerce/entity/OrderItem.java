@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name="order_item")
@@ -16,16 +17,16 @@ public class OrderItem {
     private Long id;
 
     @Column (name = "image_url")
-    private String imgUrl;
+    private String imageUrl;
 
     @Column (name = "unit_price")
-    private String unitPrice;
+    private BigDecimal unitPrice;
 
     @Column (name = "quantity")
-    private String state;
+    private int quantity;
 
     @Column (name = "product_id")
-    private String productId;
+    private Long productId;
 
     @ManyToOne
     @JoinColumn(name = "order_id")

@@ -31,7 +31,7 @@ public class Address {
     private String sipCode;
 
     @OneToOne
-    @PrimaryKeyJoinColumn (name = "order_id")
+    @PrimaryKeyJoinColumn
     private Order order;
 
 }

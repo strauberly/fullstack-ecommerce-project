@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 import { Country } from '../common/country';
 import { State } from '../common/state';
 
