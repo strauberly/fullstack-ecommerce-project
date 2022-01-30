@@ -10,8 +10,30 @@ All starter files and code provided by Chad Darby.
 Future implementation: I intend to use what is learned here as a means to create my own Angular application to add to my project portfolio for consideration by employers.
 
 #Thank You for Checking out what I am working on!
+-30 Jan 2022-
+
+Began implementation of Stripe payment Services. Initial work on Backend complete.
+--------------------
+
+-29 Jan 2022-
+
+Began implementation of Stripe payment Services. Initial work on Backend complete.
+--------------------
+-27 Jan 2022-
+
+Application updated for https front and back.
+--------------------
+-26 Jan 2022-
+Orders endpoint secured from front and back.
+--------------------
+-25 Jan 2022-
+Development of backend to search for orders by email. Development of front end to display users orders by most recent. Pre-populate order form with users email once logged in.
+--------------------
+-24 Jan 2022-
+Okta security widget working as desired. Seperate section for authenticated members created. Updated Backend Configurations to eliminate hard code. Updated allowable methods. Hopefully just about a week more!
+--------------------
 -23 Jan 2022-
-Alert box is now populating with order number and login button generates Okta sign in.
+Alert box is now populating with order number and login button generates Okta sign in. However can not log in yet due to a cookie configuration.
 --------------------------
 -20 Jan 2022-
 Was not receiving fully desired output after implenting front end of sending order information. Investigating backend revealed multiple changes nedded for correct population of DB. That appears to have been corrected but still researching why the alert box with order confirmation is not generating. update** html typo**
