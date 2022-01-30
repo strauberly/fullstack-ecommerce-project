@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
-@CrossOrigin("http://localhost:4200")                               //endpoint
+                              //endpoint
 @RepositoryRestResource
 public interface StateRepository extends JpaRepository<State, Integer> {
     List<State> findByCountryCode(@Param("code") String code);

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProductService } from './services/product.service';
 
 import { Routes, RouterModule, Router } from '@angular/router';
@@ -28,9 +28,12 @@ import {
 
 import myAppConfig from './config/my-app-config';
 import { OktaAuth } from '@okta/okta-auth-js';
+import { MembersPageComponent } from './components/members-page/members-page.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
 const oktaConfig = Object.assign(
   {
-    onAuthRequired: (injector) => {
+    onAuthRequired: (oktaAuth, injector) => {
       const router = injector.get(Router);
       //redirect user to login page
       router.navigate(['/login']);
@@ -42,13 +45,23 @@ const oktaAuth = new OktaAuth(oktaConfig);
 // once finds path creates new instance of product list component.
 //most specific to most generic
 const routes: Routes = [
+  {
+    path: 'order-history',
+    component: OrderHistoryComponent,
+    canActivate: [OktaAuthGuard],
+  },
+  {
+    path: 'members',
+    component: MembersPageComponent,
+    canActivate: [OktaAuthGuard],
+  },
   { path: 'login/callback', component: OktaCallbackComponent },
   { path: 'login', component: LoginComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'cart-details', component: CartDetailsComponent },
   { path: 'products/:id', component: ProductDetailsComponent },
   { path: 'search/:keyword', component: ProductListComponent },
-  { path: 'category/:id/:name', component: ProductListComponent },
+  { path: 'category/:id', component: ProductListComponent },
   { path: 'category', component: ProductListComponent },
   { path: 'products', component: ProductListComponent },
   { path: '', redirectTo: '/products', pathMatch: 'full' },
@@ -67,6 +80,8 @@ const routes: Routes = [
     CheckoutComponent,
     LoginComponent,
     LoginStatusComponent,
+    MembersPageComponent,
+    OrderHistoryComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -76,7 +91,15 @@ const routes: Routes = [
     ReactiveFormsModule,
     OktaAuthModule,
   ],
-  providers: [ProductService, { provide: OKTA_CONFIG, useValue: { oktaAuth } }],
+  providers: [
+    ProductService,
+    { provide: OKTA_CONFIG, useValue: { oktaAuth } },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

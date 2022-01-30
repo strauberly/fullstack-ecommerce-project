@@ -32,6 +32,14 @@
             "scripts": []
           },
           "configurations": {
+            "qa": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.qa.ts"
+                }
+              ]
+            },
             "production": {
               "budgets": [
                 {
@@ -70,8 +78,12 @@
             "production": {
               "browserTarget": "angular-ecommerce:build:production"
             },
+
             "development": {
               "browserTarget": "angular-ecommerce:build:development"
+            },
+            "qa": {
+              "browserTarget": "angular-ecommerce:build:qa"
             }
           },
           "defaultConfiguration": "development"
