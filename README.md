@@ -10,9 +10,14 @@ All starter files and code provided by Chad Darby.
 Future implementation: I intend to use what is learned here as a means to create my own Angular application to add to my project portfolio for consideration by employers.
 
 #Thank You for Checking out what I am working on!
+--------------------------
+-31 Jan 2022-
+
+Possibly an issue with deprecated onPromise method resulting in an undefined error. Researching the issue.
+--------------------
 -30 Jan 2022-
 
-Began implementation of Stripe payment Services. Initial work on Backend complete.
+Was running into a bug after studies and implementation of front end implementation for Stripe. Error was in back end port number. Issue is now resolved.
 --------------------
 
 -29 Jan 2022-

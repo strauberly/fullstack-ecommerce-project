@@ -36,7 +36,7 @@ export class CheckoutComponent implements OnInit {
   shippingAddressStates: State[] = [];
   billingAddressStates: State[] = [];
 
-  stoarage: Storage = sessionStorage;
+  storage: Storage = sessionStorage;
 
   // init stripe api
 
@@ -59,7 +59,7 @@ export class CheckoutComponent implements OnInit {
     this.reviewCartDetails();
 
     // read the users email address from browser storage
-    const theEmail = JSON.parse(this.stoarage.getItem('userEmail'));
+    const theEmail = JSON.parse(this.storage.getItem('userEmail'));
 
     this.checkoutFormGroup = this.formBuilder.group({
       customer: this.formBuilder.group({
@@ -250,7 +250,7 @@ export class CheckoutComponent implements OnInit {
   onSubmit() {
     console.log('Handling the submit button');
     if (this.checkoutFormGroup.invalid) {
-      alert('checkout form invalid');
+      console.log('invalid');
       this.checkoutFormGroup.markAllAsTouched();
       return;
     }
@@ -326,10 +326,10 @@ export class CheckoutComponent implements OnInit {
     ) {
       this.chekoutService
         .createPaymentIntent(this.paymentInfo)
-        .subscribe((paymentIntentRespnse) => {
+        .subscribe((paymentIntentResponse) => {
           this.stripe
             .confirmCardPayment(
-              paymentIntentRespnse.client_secret,
+              paymentIntentResponse.client_secret,
               {
                 payment_method: {
                   card: this.cardElement,
@@ -347,7 +347,7 @@ export class CheckoutComponent implements OnInit {
                   this.checkoutService.placeOrder(purchase).subscribe({
                     next: (response) => {
                       alert(
-                        `Your order has been received. \n Order tracking number: ${response.orderTrackingNumber}`
+                        `Your order has been received.\nOrder tracking number: ${response.orderTrackingNumber}`
                       );
                       //reset cart
 
@@ -365,35 +365,35 @@ export class CheckoutComponent implements OnInit {
       this.checkoutFormGroup.markAllAsTouched();
       return;
     }
-
-    // // call REST API via the checkout service
-    // this.chekoutService.placeOrder(purchase).subscribe({
-    //   next: (response) => {
-    //     alert(
-    //       `Your order has been received.\nOrder tracking number: ${response.orderTrackingNumber}`
-    //     );
-    //     //reset cart
-    //     this.resetCart();
-    //   },
-    //   error: (err) => {
-    //     alert(`There was an error: ${err.message}`);
-    //   },
-    // });
-
-    // console.log(this.checkoutFormGroup.get('customer').value);
-    // console.log(
-    //   'The email address is ' +
-    //     this.checkoutFormGroup.get('customer').value.email
-    // );
-    // console.log(
-    //   'The shipping adress country is ' +
-    //     this.checkoutFormGroup.get('shippingAddress').value.country.name
-    // );
-    // console.log(
-    //   'The shipping adress state is ' +
-    //     this.checkoutFormGroup.get('shippingAddress').value.state.name
-    // );
   }
+
+  // // call REST API via the checkout service
+  // this.chekoutService.placeOrder(purchase).subscribe({
+  //   next: (response) => {
+  //     alert(
+  //       `Your order has been received.\nOrder tracking number: ${response.orderTrackingNumber}`
+  //     );
+  //     //reset cart
+  //     this.resetCart();
+  //   },
+  //   error: (err) => {
+  //     alert(`There was an error: ${err.message}`);
+  //   },
+  // });
+
+  // console.log(this.checkoutFormGroup.get('customer').value);
+  // console.log(
+  //   'The email address is ' +
+  //     this.checkoutFormGroup.get('customer').value.email
+  // );
+  // console.log(
+  //   'The shipping adress country is ' +
+  //     this.checkoutFormGroup.get('shippingAddress').value.country.name
+  // );
+  // console.log(
+  //   'The shipping adress state is ' +
+  //     this.checkoutFormGroup.get('shippingAddress').value.state.name
+  // );
 
   resetCart() {
     //reset cart data
@@ -403,10 +403,10 @@ export class CheckoutComponent implements OnInit {
     //reset the form
     this.checkoutFormGroup.reset();
 
-    // nav back to tthe prodcts page
+    // nav back to tthe products page
     this.router.navigateByUrl('/products');
   }
-
+  /*
   handleMonthsAndYears() {
     const creditCardFormGroup = this.checkoutFormGroup.get('creditCard');
 
@@ -430,6 +430,7 @@ export class CheckoutComponent implements OnInit {
       this.ccMonths = data;
     });
   }
+  */
   getStates(formGroupName: string) {
     const formGroup = this.checkoutFormGroup.get(formGroupName);
 
