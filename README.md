@@ -11,6 +11,14 @@ Future implementation: I intend to use what is learned here as a means to create
 
 #Thank You for Checking out what I am working on!
 --------------------------
+-4 Feb 2022-
+
+Issue to with nev links not working tracked to product-category-menu-component.html. Issue Corrected.
+
+Next will be finding why purchase button is not responding.
+suspect the issue related to -> TypeError: this.checkoutService is undefined
+
+--------------------
 -31 Jan 2022-
 
 Possibly an issue with deprecated onPromise method resulting in an undefined error. Researching the issue.

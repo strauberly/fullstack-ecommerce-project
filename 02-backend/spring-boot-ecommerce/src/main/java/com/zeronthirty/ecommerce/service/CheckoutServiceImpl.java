@@ -34,7 +34,7 @@ public class CheckoutServiceImpl implements CheckoutService {
         // retrieve order info from dto
         Order order = purchase.getOrder();
         // gen tracking number
-        String orderTrackingNumber = genOrderTrackingNumber();
+        String orderTrackingNumber = generateOrderTrackingNumber();
         order.setOrderTrackingNumber(orderTrackingNumber);
         // pop order with order items
         Set<OrderItem> orderItems = purchase.getOrderItems();
@@ -50,7 +50,7 @@ public class CheckoutServiceImpl implements CheckoutService {
         String theEmail = customer.getEmail();
         Customer customerFromDB = customerRepository.findByEmail(theEmail);
         if (customerFromDB != null){
-            customer=customerFromDB;
+            customer = customerFromDB;
         }
         customer.add(order);
         // save to database
@@ -72,7 +72,7 @@ public class CheckoutServiceImpl implements CheckoutService {
         return PaymentIntent.create(params);
     }
 
-    private String genOrderTrackingNumber() {
+    private String generateOrderTrackingNumber() {
         //gen random UUID number (UUID version-4 **research)
         return UUID.randomUUID().toString();
 

@@ -32,7 +32,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
         RepositoryRestConfigurer.super.configureRepositoryRestConfiguration(config, cors);
-        HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE,HttpMethod.PATCH, HttpMethod.TRACE};
+        HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE,HttpMethod.PATCH};
 
         //disable http methods for productCategory
         disableHttpMethods(Product.class,config, theUnsupportedActions);
@@ -63,8 +63,8 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         List<Class> entityClasses = new ArrayList<>();
 
         //get entity types for the entities
-        for (EntityType tempEntitiyType : entities) {
-            entityClasses.add(tempEntitiyType.getJavaType());
+        for (EntityType tempEntityType : entities) {
+            entityClasses.add(tempEntityType.getJavaType());
 
         }
         //expose the ids for the array of entity/domain types
