@@ -1,106 +1,146 @@
+# AngularEcommerce
 
-# README #
+This project is part of a course by Chad Darby and Harinath Kuntamukkala of https://www.luv2code.com.
+It is an example of building a fullstack single page e-commerce application. The application incorporates aspects such as displaying the sellers wares, taking and transmitting orders and providing tracking numbers for the customer, security and logins, payment systems and receipts, and more.
 
-This repository is a display of my work on a project as an assignment from Chad Darby of http://www.luv2code.com. The assignment is building an e-commerce application utilizing Angular for the  frontend and SpringBoot for the back and utilizes resources provided by Chad (css, html, graphics, starter code, sql scripts). Thank you Chad!
+Chad and Hari provided starter materials including images, html and css files, as well as database scripts to use in MySql Workbench and a SpringBoot application properties file to get moving quickly.
 
-This repository will be updated ittermittently with notes and progress updates.
+I am excited to use what was learned in this project to build my own application from scratch. Thank you for checking out what I have been learning.
 
-All starter files and code provided by Chad Darby.
+---
 
-Future implementation: I intend to use what is learned here as a means to create my own Angular application to add to my project portfolio for consideration by employers.
+---
 
-#Thank You for Checking out what I am working on!
---------------------------
--4 Feb 2022-
+## Table of Contents
 
-Issue to with nev links not working tracked to product-category-menu-component.html. Issue Corrected.
+1. Technologies Used
+2. Setup
+3. Package Layout and Descriptions
+4. Future Implementations
+5. Video Demonstrations
 
-Next will be finding why purchase button is not responding.
-suspect the issue related to -> TypeError: this.checkoutService is undefined
+---
 
---------------------
--31 Jan 2022-
+---
 
-Possibly an issue with deprecated onPromise method resulting in an undefined error. Researching the issue.
---------------------
--30 Jan 2022-
+# I. Technologies Used
 
-Was running into a bug after studies and implementation of front end implementation for Stripe. Error was in back end port number. Issue is now resolved.
---------------------
+## Frontend
 
--29 Jan 2022-
+- node.js
+- angular
+- bootstrap
+- html
+- css
+- vscodium
 
-Began implementation of Stripe payment Services. Initial work on Backend complete.
---------------------
--27 Jan 2022-
+## Backend
 
-Application updated for https front and back.
---------------------
--26 Jan 2022-
-Orders endpoint secured from front and back.
---------------------
--25 Jan 2022-
-Development of backend to search for orders by email. Development of front end to display users orders by most recent. Pre-populate order form with users email once logged in.
---------------------
--24 Jan 2022-
-Okta security widget working as desired. Seperate section for authenticated members created. Updated Backend Configurations to eliminate hard code. Updated allowable methods. Hopefully just about a week more!
---------------------
--23 Jan 2022-
-Alert box is now populating with order number and login button generates Okta sign in. However can not log in yet due to a cookie configuration.
---------------------------
--20 Jan 2022-
-Was not receiving fully desired output after implenting front end of sending order information. Investigating backend revealed multiple changes nedded for correct population of DB. That appears to have been corrected but still researching why the alert box with order confirmation is not generating. update** html typo**
---------------------------
--19 Jan 2022-
-Validation of form field input implemented and functioning.
+- java
+- lombok
+- spring boot
+- mysql
+- postman
+- intellij
 
-Cart price total and quantity total at checkout now functioning as intended.
+## Security
 
-Implented api receiving an order and writing to database and generating a tracking number that is also written to database.
---------------------------
+- ssl
+- okta
 
--17 Jan 2022-
-Country and State drop downs implemented. States dependent on country.
-Began field input validation.
---------------------------
+## Payment System
 
--16 Jan 2022-
-Dependent fields implemented (expiration month and years).
---------------------------
+- stripe
 
--15 Jan 2022-
-Began laying out checkout form components and building html.
---------------------------
+---
 
--14 Jan 2022-
-Cart details can now be viewed and altered.
-Displays total quantity price and adds button for checkout.
---------------------------
+---
 
+# II. Setup
 
--13 Jan 2022-
-Items can be added to cart and sub-totaled from Main and Detail view. 
+Required keys and certificates have been intentionally stripped from the application and so you will need to provide your own. This can be achieved through creating Stripe and Okta developer accounts. Otherwise the configuration files are left intact to help serve as a template. Notations for these requirements will be made in the code.
 
---------------------------
--11 Jan 2022-
-Pagination for results by category and results by keyword functioning 
+---
 
-------------------------------------------
--10 Jan 2022-
-Can now search products by keyword and message for if no results found
+---
 
+# III. Layout and Descriptions
 
-----------------------
--9 Jan 2022-
+## Frontend
 
-Links now appropriatly return items based on category id
+The frontend of this application was built in VSCodium as an Angular project and utilizes node.js in building our server connection. Boot strap is utilized in table stylizing.
 
-category menu now loads dynamically based on contents of db
+Adjustments have been made in angular.json, package.json, and tsconfig.json.
 
+In addition to standard angular files and folders note ssl-localhost,
+please see the following https://github.com/darbyluv2code/fullstack-angular-and-springboot/blob/master/bonus-content/secure-https-communication/openssl-setup.md in order to generate.
 
----------------
--7 Jan 2022-
+### src Package and File Layout:
 
-Front and Backend are connected and some modifications for style. Currently working on queries by category id.
+| Package/File          | Description                                                                                                                                             |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| package: app          | Contains the majority of packages and files critical to the application. Will expand on this package below.                                             |
+| package: assets       | contains logo and product images                                                                                                                        |
+| package: environments | contains our information for development, q&a, and production environments. Your publishable Stripe key will be needed for the development environment. |
+| file: typings.d.ts    | Declares variables for use with Stripe.                                                                                                                 |
+|                       |
 
+### app Package and File Layout:
 
+| Package/File        | Description                                                                                                   |
+| ------------------- | ------------------------------------------------------------------------------------------------------------- |
+| package: common     | Contains all our files for object constructors referenced on the frontend.                                    |
+| package: components | Contains all packages and files to create components and enact their logic in the application.                |
+| package: config     | Contains information for Okta oidc configuration. You will need to insert your values from Okta account here. |
+| package: services   | Contains files linking logic from backend methods to frontend and handling logic for front end components. .  |
+| package: validators | Contains means for custom validation of customer input.                                                       |
+| file: app.module.ts | Defines our routes.                                                                                           |
+
+---
+
+---
+
+## Backend
+
+The backend of this application is comprised of a sql database built in MySql from the courses provided database scripts. The API is created utilizing Spring Boot and Lombok removes a bit of boiler-plate code. Backend Application was built in intellij as a maven and spring boot project. Postman was occasionally used in testing the API.
+
+---
+
+### Initial Layout:
+
+| Package/File       | Description                                                                                                                                                                                                                                                 |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| package: java      | Holds the projects main code.                                                                                                                                                                                                                               |
+| package: resources | Contains the project's key store and application properties files. These files hold values for use across the application in regards to ports, paths, authentication. This will be an area where you will need to spend some time entering your own values. |
+
+---
+
+### Java Package Layout:
+
+| Package/File        | Description                                                                                                                                                                                                           |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| package: config     | Classes established here are used in limiting HTTP methods, handling cors, and protecting and exposing endpoints.                                                                                                     |
+| package: controller | Provides mapping for the checkout service.                                                                                                                                                                            |
+| package: dao        | Files in our Data Access Object package create endpoints for our api which provides data to be used in business logic.                                                                                                |
+| package: dto        | Contains our Data Transfer Objects pertaining to purchases.                                                                                                                                                           |
+| package: entity     | Files found in this package map our database for transfer to our front end displays of the data found there.                                                                                                          |
+| package: service    | The checkout service found here handles our business logic in regards to creating a payment intent to send to Stripe for processing, generating a tracking number for the customer and providing a purchase response. |
+| file: ecommerceapp  | Contains our main method and launches the application.                                                                                                                                                                |
+
+---
+
+---
+
+# IV. Future Implementations
+
+Next plans for the current application include AWS implementation for hosting the application and making it easily accessible.
+
+---
+
+---
+
+# V. Video Demonstrations of Application
+
+---
+
+---

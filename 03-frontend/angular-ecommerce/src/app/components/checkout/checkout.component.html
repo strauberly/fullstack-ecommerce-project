@@ -111,7 +111,32 @@
               </div>
             </div>
           </div>
-
+          <div class="row">
+            <div class="col-md-2"><label>State</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+                <select formControlName="state">
+                  <option
+                    *ngFor="let state of shippingAddressStates"
+                    [ngValue]="state"
+                  >
+                    {{ state.name }}
+                  </option>
+                </select>
+                <div
+                  *ngIf="
+                    shippingAddressState.invalid &&
+                    (shippingAddressState.dirty || shippingAddressState.touched)
+                  "
+                  class="alert alert-danger mt-1"
+                >
+                  <div *ngIf="shippingAddressCity.errors['required']">
+                    State is required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="row">
             <div class="col-md-2"><label>Street</label></div>
             <div class="col-md-9">
@@ -164,33 +189,6 @@
                   </div>
                   <div *ngIf="shippingAddressCity.errors['minlength']">
                     City must be at least 2 characters
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-2"><label>State</label></div>
-            <div class="col-md-9">
-              <div class="input-space">
-                <select formControlName="state">
-                  <option
-                    *ngFor="let state of shippingAddressStates"
-                    [ngValue]="state"
-                  >
-                    {{ state.name }}
-                  </option>
-                </select>
-                <div
-                  *ngIf="
-                    shippingAddressState.invalid &&
-                    (shippingAddressState.dirty || shippingAddressState.touched)
-                  "
-                  class="alert alert-danger mt-1"
-                >
-                  <div *ngIf="shippingAddressCity.errors['required']">
-                    State is required
                   </div>
                 </div>
               </div>
@@ -270,6 +268,33 @@
           </div>
 
           <div class="row">
+            <div class="col-md-2"><label>State</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+                <select formControlName="state">
+                  <option
+                    *ngFor="let state of billingAddressStates"
+                    [ngValue]="state"
+                  >
+                    {{ state.name }}
+                  </option>
+                </select>
+                <div
+                  *ngIf="
+                    billingAddressState.invalid &&
+                    (billingAddressState.dirty || billingAddressState.touched)
+                  "
+                  class="alert alert-danger mt-1"
+                >
+                  <div *ngIf="billingAddressCity.errors['required']">
+                    State is required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
             <div class="col-md-2"><label>Street</label></div>
             <div class="col-md-9">
               <div class="input-space">
@@ -319,33 +344,6 @@
                   </div>
                   <div *ngIf="billingAddressCity.errors['minlength']">
                     City must be at least 2 characters
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-2"><label>State</label></div>
-            <div class="col-md-9">
-              <div class="input-space">
-                <select formControlName="state">
-                  <option
-                    *ngFor="let state of billingAddressStates"
-                    [ngValue]="state"
-                  >
-                    {{ state.name }}
-                  </option>
-                </select>
-                <div
-                  *ngIf="
-                    billingAddressState.invalid &&
-                    (billingAddressState.dirty || billingAddressState.touched)
-                  "
-                  class="alert alert-danger mt-1"
-                >
-                  <div *ngIf="billingAddressCity.errors['required']">
-                    State is required
                   </div>
                 </div>
               </div>
