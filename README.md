@@ -1,4 +1,4 @@
-# AngularEcommerce
+# fullstack-ecommerce-project
 
 This project is part of a course by Chad Darby and Harinath Kuntamukkala of https://www.luv2code.com.
 It is an example of building a fullstack single page e-commerce application. The application incorporates aspects such as displaying the sellers wares, taking and transmitting orders and providing tracking numbers for the customer, security and logins, payment systems and receipts, and more.
